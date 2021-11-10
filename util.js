@@ -11,7 +11,7 @@ const parsePath = (path) => {
 }
 
 const formatPath = (parsedPath) => {
-  if (Array.isArray(parsedPath) || parsedPath.length === 0) {
+  if (!Array.isArray(parsedPath) || parsedPath.length === 0) {
     return '/';
   }
   let formatted = '';
