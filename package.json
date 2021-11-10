@@ -11,6 +11,8 @@
   "dependencies": {
     "@ainblockchain/ain-js": "^1.1.8",
     "@ainblockchain/ain-util": "^1.1.7",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "fast-json-stable-stringify": "^2.1.0",
+    "querystring": "^0.2.1"
   }
 }

@@ -1,4 +1,4 @@
-const { stringify } = require("querystring");
+const stringify = require("fast-json-stable-stringify");
 
 const parsePath = (path) => {
   if (!path) {
