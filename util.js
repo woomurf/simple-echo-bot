@@ -1,5 +1,3 @@
-const stringify = require("fast-json-stable-stringify");
-
 const parsePath = (path) => {
   if (!path) {
     return [];
@@ -16,7 +14,7 @@ const formatPath = (parsedPath) => {
   }
   let formatted = '';
   for (const label of parsedPath) {
-    formatted += '/' + stringify(label);
+    formatted += '/' + String(label);
   }
   return (formatted.startsWith('/') ? '' : '/') + formatted;
 }
