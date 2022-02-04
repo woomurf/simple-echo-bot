@@ -3,9 +3,10 @@ const AinJs = require('@ainblockchain/ain-js').default;
 const app = express();
 const { parsePath, formatPath } = require('./util');
 const port = 80;
-const blockchainEndpoint = process.env.BLOCKCHAIN_ENDPOINT;
-const ain = new AinJs(blockchainEndpoint, 0);
-const BOT_NAME = 'hyeonwoong-echo-bot';
+const blockchainEndpoint = process.env.PROVIDER_URL;
+const chainId = blockchainEndpoint.includes('mainnet') ? 1 : 0
+const ain = new AinJs(blockchainEndpoint, chainId);
+const BOT_NAME = 'echo-bot';
 const BOT_PK = process.env.AINIZE_INTERNAL_PRIVATE_KEY;
 const BOT_ADDRESS = AinJs.utils.toChecksumAddress(ain.wallet.add(BOT_PK)); // 0x09A0d53FDf1c36A131938eb379b98910e55EEfe1
 ain.wallet.setDefaultAccount(BOT_ADDRESS);
