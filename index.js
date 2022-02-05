@@ -8,7 +8,7 @@ const chainId = blockchainEndpoint.includes('mainnet') ? 1 : 0
 const ain = new AinJs(blockchainEndpoint, chainId);
 const BOT_NAME = 'echo-bot';
 const BOT_PK = process.env.AINIZE_INTERNAL_PRIVATE_KEY;
-const BOT_ADDRESS = AinJs.utils.toChecksumAddress(ain.wallet.add(BOT_PK)); // 0x09A0d53FDf1c36A131938eb379b98910e55EEfe1
+const BOT_ADDRESS = AinJs.utils.toChecksumAddress(ain.wallet.add(BOT_PK));
 ain.wallet.setDefaultAccount(BOT_ADDRESS);
 
 app.use(express.json());
